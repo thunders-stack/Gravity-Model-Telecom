@@ -1,4 +1,4 @@
-# 4. Create GeoDataFrames for plotting
+# Create GeoDataFrames for plotting
 flows_gdf = gpd.GeoDataFrame(
     flows_df,
     geometry=[
@@ -16,7 +16,7 @@ cities_gdf = gpd.GeoDataFrame(
     crs="EPSG:4326"
 )
 
-# 5. Plot on Germany map
+# Plot on Germany map
 germany_map = gpd.read_file("de_shp/de.shp")
 fig, ax = plt.subplots(figsize=(12, 12))
 germany_map.plot(ax=ax, color="lightgrey", edgecolor="black")
@@ -34,8 +34,9 @@ cities_gdf.plot(ax=ax, color="red", markersize=20)
 for _, r in cities_gdf.iterrows():
     ax.text(r.geometry.x + 0.05, r.geometry.y + 0.05, r["CityName"], fontsize=6)
 
-ax.set_title("Gravity Model Flows (Pop×GDP, Distance², K=64380.06)")
+ax.set_title("Gravity Model Flows (Pop×GDP, Distance², K=64380.06)") # Change the title as needed
 ax.set_xlabel("Longitude")
 ax.set_ylabel("Latitude")
 plt.tight_layout()
+
 plt.show()
