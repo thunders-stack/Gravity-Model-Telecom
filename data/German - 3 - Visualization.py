@@ -1,4 +1,5 @@
-# Create GeoDataFrames for plotting
+# Add this code to the previous code to visualize the data.
+# Create GeoDataFrames for plotting.
 flows_gdf = gpd.GeoDataFrame(
     flows_df,
     geometry=[
@@ -40,3 +41,4 @@ ax.set_ylabel("Latitude")
 plt.tight_layout()
 
 plt.show()
+
