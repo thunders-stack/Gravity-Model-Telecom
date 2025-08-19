@@ -5,9 +5,10 @@ from math import sqrt
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 from scipy.stats import spearmanr
 
-# ===== CONFIG =====
-data_dir = r"C:\Users\D\Desktop\CDAC\.venv\Project Data\Germany - Daily"
+# Configuration
+data_dir = r"path\to\directory"
 
+# Example file names that you wish to check
 files = {
     'Gravity1': 'gravity_flows_dist1.csv',
     'Gravity2': 'germany_gravity_flows.csv',
@@ -22,7 +23,7 @@ validation_file = 'monthly_demand_matrix.csv'
 # Possible flow column names we will look for
 possible_flow_cols = ["Flow_Adjusted", "Flow", "Value", "Demand"]
 
-# ===== FUNCTIONS =====
+# Functions
 def detect_flow_col(df):
     """Find first matching flow column from possible names."""
     for col in possible_flow_cols:
@@ -124,3 +125,4 @@ if __name__ == "__main__":
     out_path = os.path.join(data_dir, "model_error_metrics_with_scaling.csv")
     results_df.to_csv(out_path, index=False)
     print(f"\n✅ Results saved to: {out_path}")
+
