@@ -72,4 +72,5 @@ with open(csv_file_path, 'w', newline='') as csvfile:
             "Longitude": city["Longitude"]
         })
 
+
 print(f"'{csv_file_path}' created successfully with {len(city_data)} cities.")
